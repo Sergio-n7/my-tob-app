@@ -29,7 +29,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: #203040;
+  background-color: #152d35;
 }
 
 main {
@@ -39,7 +39,7 @@ main {
 
 footer {
   grid-area: footer;
-  background-color: #203040;
+  background-color: #152d35;
   color: #fff;
 }
 
@@ -58,7 +58,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #ff8000;
+  color: #f8f0df;
 }
 ul {
   padding: 0;
@@ -93,7 +93,7 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: #345b63;
 }
 button.block {
   width: 100%;
@@ -179,7 +179,7 @@ img.large {
 
 /* Rating */
 .rating span {
-  color: #f0c040;
+  color: #345b63;
   margin: 0.1rem;
 }
 
@@ -241,7 +241,7 @@ img.large {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #203040;
+  background-color: #152d35;
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
@@ -260,8 +260,8 @@ img.large {
   font-weight: bold;
 }
 .checkout-steps > div.active {
-  border-top-color: #f08000;
-  color: #f08000;
+  border-top-color: #f8f0df;
+  color: #f8f0df;
 }
 /* Table */
 .table {

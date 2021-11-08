@@ -32,8 +32,10 @@ export default function SellerScreen(props) {
         ) : (
           <ul className="card card-body">
             <li>
-              <div>
-                <img src={user.seler.logo} alt={user.seller.name}></img>
+              <div className="row">
+                <div>
+                  <img src={user.seler.logo} alt={user.seller.name}></img>
+                </div>
               </div>
             </li>
           </ul>

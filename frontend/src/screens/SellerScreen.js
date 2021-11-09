@@ -4,6 +4,7 @@ import { listProducts } from "../actions/productActions";
 import { detailsUser } from "../actions/userAction";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import Rating from "../components/Rating";
 
 export default function SellerScreen(props) {
   const sellerId = props.match.params.id;
@@ -36,8 +37,21 @@ export default function SellerScreen(props) {
                 <div>
                   <img src={user.seler.logo} alt={user.seller.name}></img>
                 </div>
+                <div>
+                  <h1>{user.seller.name}</h1>
+                </div>
               </div>
             </li>
+            <li>
+              <Rating
+                value={user.seller.rating}
+                text={`${user.seller.numReviews} reviews`}
+              ></Rating>
+            </li>
+            <li>
+              <a href={`mailto:${user.mail}`}>Contact Seller</a>
+            </li>
+            <li>{user.seller.description}</li>
           </ul>
         )}
       </div>

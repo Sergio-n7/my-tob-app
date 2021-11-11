@@ -35,7 +35,7 @@ export default function SellerScreen(props) {
             <li>
               <div className="row">
                 <div>
-                  <img src={user.seler.logo} alt={user.seller.name}></img>
+                  <img src={user.seller.logo} alt={user.seller.name}></img>
                 </div>
                 <div>
                   <h1>{user.seller.name}</h1>

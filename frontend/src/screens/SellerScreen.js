@@ -4,6 +4,7 @@ import { listProducts } from "../actions/productActions";
 import { detailsUser } from "../actions/userAction";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import Product from "../components/Product";
 import Rating from "../components/Rating";
 
 export default function SellerScreen(props) {
@@ -33,19 +34,23 @@ export default function SellerScreen(props) {
         ) : (
           <ul className="card card-body">
             <li>
-              <div className="row">
-                <div>
-                  <img src={user.seller.logo} alt={user.seller.name}></img>
+              <div className="row start">
+                <div className="p-1">
+                  <img
+                    className="small"
+                    src={user.seller.logo}
+                    alt={user.seller.name}
+                  ></img>
                 </div>
-                <div>
+                <div className="p-1">
                   <h1>{user.seller.name}</h1>
                 </div>
               </div>
             </li>
             <li>
               <Rating
-                value={user.seller.rating}
-                text={`${user.seller.numReviews} reviews`}
+                rating={user.seller.rating}
+                numReviews={user.seller.numReviews}
               ></Rating>
             </li>
             <li>
@@ -55,7 +60,24 @@ export default function SellerScreen(props) {
           </ul>
         )}
       </div>
-      <div className="col-3"></div>
+      <div className="col-3">
+        {loadingProducts ? (
+          <LoadingBox></LoadingBox>
+        ) : errorProducts ? (
+          <MessageBox variant="danger">{errorProducts}</MessageBox>
+        ) : (
+          <>
+            {products.length === 0 && (
+              <MessageBox>No Products Found</MessageBox>
+            )}
+            <div className="row center">
+              {products.map((product) => (
+                <Product key={product._id} product={product} />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
